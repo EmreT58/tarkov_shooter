@@ -8,8 +8,8 @@
 body {
     height: 100%;
     width: 100%;
-    /* background-color: steelblue; */
-    background-image:url(/images/graygrid-darker.png);
+    background-color: #181A1B;
+    background-image:url(../images/graygrid-darker.png);
     background-size: cover;
 }
 header {
@@ -37,7 +37,7 @@ header {
     width: 20%;
 }
 main {
-    background-image: url(/images/bigred.PNG);
+    background-image: url(../images/bigred.PNG);
     background-size: cover;
     height: 80vh;
     width: 80vw;
