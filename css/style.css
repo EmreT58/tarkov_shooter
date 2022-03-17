@@ -89,17 +89,23 @@ button {
 #medium {
     background-color: goldenrod;
 }
-
+#hard {
+    background-color: crimson;
+}
+#rush {
+    background-color: darkred;
+}
 /* MOBILE FRIENDLY */
 @media only screen and (max-width: 500px) {
     header {
         width: 80vw;
         margin: auto;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: space-evenly;
         padding: 1em;
         text-align: center;
+        flex-wrap: wrap;
     }
     #title {
         width: 100%;
@@ -108,13 +114,13 @@ button {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        width: 100%;
+        width: 50%;
     }
     #healthpoints img {
         width: 25%;
     }
     #kills_score {
-        width: 100%;
+        width: 50%;
     }
     main {
         background-image: url(../images/bigred.PNG);
@@ -142,7 +148,7 @@ button {
         border: 1px solid white;
         border-radius: 20px;
         position: absolute;
-        top: 75%;
+        top: 65%;
         left: 50%;
         transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
