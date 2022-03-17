@@ -1,0 +1,172 @@
+<div class="map">
+    <div class="cover">
+        <div class="character"><img src="images/pmc.png" alt="Private Military Contractor" class="pmc"></div>
+    </div>
+    <div class="cover">
+        <div class="character"><img src="images/killa.png" alt="Random boss Character" class="boss"></div>
+    </div>
+    <div class="cover">
+        <div class="character"><img src="images/" alt="SCAV Character" class="scav"></div>
+    </div>
+    <div class="cover">
+        <div class="character"><img src="images/" alt="PRESS Character" class="press"></div>
+    </div>
+    <div class="cover">
+        <div class="character"><img src="images/" alt="UNTAR Character" class="untar"></div>
+    </div>
+    <div class="cover">
+        <div class="character"><img src="images/" alt="Raider Character" class="raider"></div>
+    </div>
+</div>
+
+<body onload="init()">
+    <img src="images/pmc.png" alt="" id="pmc">
+<script>
+    // var killa
+// var reshala
+// var sanitar
+// var shturman
+// var pmc
+// var boss
+// var scav
+// var press
+// var raider
+// var untar
+
+// var boss = [killa, reshala, sanitar, shturman];
+// function bossSwitch {
+//     document.getElementByClassName = ".boss"
+// }
+
+function init() {
+    picture = document.getElementById("pmc");
+    spaceW = screen.height - picture.height;
+    spaceH = screen.width - picture.width;
+
+    setInterval (moveIt, 500);
+}
+
+function moveIt() {
+    picture.style.top = Math.round(Math.random) * spaceW + "px";
+    picture.style.left = Math.round(Math.random) * spaceH + "px";
+}
+
+// function reactionTimer(){                  NOT SURE
+// 	if (clickImage == false){
+// 		randomPosition();
+// 		healthDamage();
+// 		} else {
+// 		console.log(scoredGame());
+// 		round--;
+// 		setTimeout(() => console.log(looper()), 5000);
+// 	}
+// }
+
+// if (clickImage == false) {
+// 	setInterval(randomPosition, 1000);
+// }
+// else {
+
+// }
+
+var easyButton = document.querySelector('#easy');
+var mediumButton = document.querySelector('#medium');
+var hardButton = document.querySelector('#hard');
+
+function randomPosition1() {
+	var xy = getRandomPosition(img);
+	img.style.top = xy[0] + 'px';
+	img.style.left = xy[1] + 'px';
+	clearTimeout(timer);
+	timer = setTimeout( () => {
+		healthDamage();
+		shotMiss.play();
+		randomPosition()
+	}, 1500);
+}
+
+function randomPosition2() {
+	var xy = getRandomPosition(img);
+	img.style.top = xy[0] + 'px';
+	img.style.left = xy[1] + 'px';
+	clearTimeout(timer);
+	timer = setTimeout( () => {
+		healthDamage();
+		shotMiss.play();
+		randomPosition()
+	}, 1000);
+}
+
+function randomPosition3() {
+	var xy = getRandomPosition(img);
+	img.style.top = xy[0] + 'px';
+	img.style.left = xy[1] + 'px';
+	clearTimeout(timer);
+	timer = setTimeout( () => {
+		healthDamage();
+		shotMiss.play();
+		randomPosition()
+	}, 500);
+}
+
+
+function easyGame() {
+	setTimeout(function(){
+		randomPosition1();
+		img.style.display = "initial";
+   }, 1000); //wacht 0.2 seconds
+	gameDiff.style.display = "none";
+}
+function mediumGame() {
+	setTimeout(function(){
+		randomPosition2();
+		img.style.display = "initial";
+   }, 1000); //wacht 0.2 seconds
+	gameDiff.style.display = "none";
+}
+function hardGame() {
+    moeilijkheidsgraad = 500;
+    randomPosition();
+	img.style.display = "initial";
+	gameDiff.style.display = "none";
+}
+easyButton.addEventListener('click', easyGame)
+mediumButton.addEventListener('click', mediumGame)
+hardButton.addEventListener('click', hardGame)
+
+// ======================Custom Alert===============================
+
+<div class="alertmsg">
+	<p id="endMsg"></p>
+	<button>Reset</button>
+</div>
+
+.alertmsg {
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid white;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    display: none;
+}
+
+var alertContainer = document.querySelector('.alertmsg');
+var endMessage = "Game over! You got " + clicksCount + " kills! Press Reset to try again!"
+
+function alertMessage () {
+    document.getElementById('alertmsg').innerHTML = endMessage;
+	alertContainer.style.display = "inital";
+};
+
+alertMessage();
+clear.randomPosition();
+</script>
+
+
+
+

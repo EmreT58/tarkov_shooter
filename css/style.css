@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Calibri" ,Arial, Helvetica, sans-serif;
+    color: white;
+}
+body {
+    height: 100%;
+    width: 100%;
+    /* background-color: steelblue; */
+    background-image:url(/images/graygrid-darker.png);
+    background-size: cover;
+}
+header {
+    width: 80vw;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 1em;
+    text-align: center;
+}
+#title {
+    width: 20%;
+}
+#healthpoints {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 60%;
+}
+#healthpoints img {
+    width: 75px;
+}
+#kills_score {
+    width: 20%;
+}
+main {
+    background-image: url(/images/bigred.PNG);
+    background-size: cover;
+    height: 80vh;
+    width: 80vw;
+    border: 5px solid white;
+    margin: auto;
+    cursor: crosshair;
+}
+main img {
+    width: 100px;
+    height: 200px;
+    position: absolute;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    display: none;
+}
+.difficulty {
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid white;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    height: auto;
+    margin: 10px;
+}
+button {
+    padding: 20px 60px;
+    background-color: crimson;
+    border: 1px solid white;
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+    margin: 5px;
+}
+#easy {
+    background-color: limegreen;
+}
+#medium {
+    background-color: goldenrod;
+}
+
+/* MOBILE FRIENDLY */
+@media only screen and (max-width: 500px) {
+    header {
+        width: 80vw;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 1em;
+        text-align: center;
+    }
+    #title {
+        width: 100%;
+    }
+    #healthpoints {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+    #healthpoints img {
+        width: 25%;
+    }
+    #kills_score {
+        width: 100%;
+    }
+    main {
+        background-image: url(/images/bigred.PNG);
+        background-size: cover;
+        height: 80vh;
+        width: 100%;
+        border: 5px solid white;
+        margin: auto;
+        cursor: crosshair;
+    }
+    main img {
+        width: 50px;
+        height: 100px;
+        position: absolute;
+        -webkit-user-drag: none;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        display: none;
+    }
+    .difficulty {
+        padding: 30px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: 1px solid white;
+        border-radius: 20px;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: auto;
+        margin: 10px;
+    }
+    button {
+        padding: 20px 60px;
+        background-color: crimson;
+        border: 1px solid white;
+        color: white;
+        border-radius: 20px;
+        text-align: center;
+        margin: 5px;
+    }
+}
