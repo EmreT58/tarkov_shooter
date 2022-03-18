@@ -2,17 +2,20 @@
 //              === Variables === 
 // ==========================================
 
-// defineert main en body
+// containers
 var mainElement = document.querySelector('main');
 var bodyElement = document.querySelector('body');
+var gameDiff = document.querySelector('.difficulty'); //Difficulty buttons container
+var copyrightContainer = document.querySelector('.credits'); // copyright credits cotainer
+
 
 // Alle button variables
-var gameDiff = document.querySelector('.difficulty'); // buttons container
 var easyButton = document.querySelector('#easy'); // 1.5s gamemode
 var mediumButton = document.querySelector('#medium'); // 1s gamemode
 var hardButton = document.querySelector('#hard'); // 0.5s gamemode
 var rushButton = document.querySelector('#rush'); // steeds sneller (1.5s) gamemode
 
+var copyright = document.querySelector('#cr-source'); //copyright button
 
 // img generator
 var img = document.createElement('img');
@@ -32,6 +35,7 @@ var shotMiss = new Audio('audio/buzz-short.mp3'); // audio voor mis schieten
 var difficultyLevel; // bepaalt de aantal miliseconden om te reageren
 
 var rushStatus = false; // zorgt ervoor dat de rush game werkt. (Steeds sneller)
+var copyrightStatus = false; // copyright cotainer aan/uit status
 
 // ==========================================
 //              === Functions === 
@@ -88,23 +92,6 @@ function healthDamage () {
 	   }, 200); //wacht 0.2 seconds
 	}
 }
-
-//Deze functie is verplaatst naar in de gamemodes om error te voorkomen
-
-// Detecteerd de mousedown op de img target en de misklik op de main
-// mainElement.addEventListener('mousedown', e => {
-// 	if(e.target !== e.currentTarget) { //als de IMG in main wordt geklikt
-// 		clickImage();
-// 		shotHit.play();
-// 		randomPosition();
-// 	}
-// 	if (e.target === e.currentTarget) { //als de main zelf wordt geklikt
-// 		healthDamage();
-// 		shotMiss.play();
-// 		randomPosition();
-// 	}
-// });
-
 
 // 1.5s reactie tijd gamemode
 function easyGame() {
@@ -192,8 +179,22 @@ function rushGame() {
    }, 1000); //wacht 1 second
 	gameDiff.style.display = "none";
 }
+// copyright container aan/uit zetter dmv status check
+function copyrightSrc() {
+	if (copyrightStatus == false){
+	copyrightContainer.style.display = "block";
+	copyrightStatus = true;
+	}
+	else {
+		copyrightContainer.style.display = "none";
+		copyrightStatus = false;
+	}
+}
+
 // gamemode keuze detectors
 easyButton.addEventListener('click', easyGame);
 mediumButton.addEventListener('click', mediumGame);
 hardButton.addEventListener('click', hardGame);
 rushButton.addEventListener('click', rushGame);
+
+copyright.addEventListener('click', copyrightSrc) // copyright button
