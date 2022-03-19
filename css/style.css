@@ -8,9 +8,28 @@
 body {
     height: 100%;
     width: 100%;
-    background-color: #181A1B;
     background-image:url(../images/graygrid-darker.png);
     background-size: cover;
+}
+#cr-source {
+    position:absolute;
+    right: 0px;
+    padding: 10px 5px;
+    border: none;
+    color: white;
+    border-radius: 0;
+    margin: 5px;
+}
+.credits {
+    padding: 25px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid white;
+    border-radius: 20px;
+    width: 25%;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    display: none;
 }
 header {
     width: 80vw;
@@ -97,6 +116,27 @@ button {
 }
 /* MOBILE FRIENDLY */
 @media only screen and (max-width: 500px) {
+    #cr-source {
+        position:absolute;
+        right: 0px;
+        padding: 2px;
+        border: none;
+        color: white;
+        border-radius: 0;
+        margin: 5px;
+    }
+    .credits {
+        padding: 25px;
+        background-color: rgba(0, 0, 0, 0.8);
+        border: 1px solid white;
+        border-radius: 20px;
+        width: 60%;
+        position: absolute;
+        right: 0;
+        top: 50px;
+        display: none;
+        z-index: 999;
+    }
     header {
         width: 80vw;
         margin: auto;
@@ -117,7 +157,7 @@ button {
         width: 50%;
     }
     #healthpoints img {
-        width: 25%;
+        width: 30%;
     }
     #kills_score {
         width: 50%;
